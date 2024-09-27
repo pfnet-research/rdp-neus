@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Preferred Networks Inc. research project page (3D Scan team)">
+  <meta name="keywords" content="Preferred Networks, PFN, PFN 3D Scan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rethinking Directional Parameterization in Neural Implicit Surface Reconstruction</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://www.preferred.jp/en/">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://pfnet-research.github.io/surface-aligned-nerf/">
+            Surface-aligned NeRF (CVPR 2022)
+          </a>
+          <a class="navbar-item" href="https://pfnet-research.github.io/neussl/">
+            NeuS with structured light (BMVC 2022)
+          </a>
+          <a class="navbar-item" href="https://pfnet-research.github.io/distilled-feature-fields/">
+            Distilled feature fields (NeurIPS 2022)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Rethinking Directional Parameterization in Neural Implicit Surface Reconstruction</h1>
+          <h2 class="title is-3 publication-title">ECCV 2024</h2>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="">Zijie Jiang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="">Tianhan Xu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://hiroharu-kato.com/">Hiroharu Kato</a><sup>2</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tokyo Institute of Technology</span>
+            <span class="author-block"><sup>2</sup>Preferred Networks, Inc.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2409.06923.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2409.06923"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (coming soon)</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/pfnet-research/rdp-neus"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+              <!-- Poster Link. -->
+              <span class="link-block">
+                <a href="./static/pdfs/ECCV_poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Poster</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <div class="content has-text-justified">
+          <p>
+            Multi-view 3D surface reconstruction using neural implicit representations has made notable progress by modeling the geometry and view-dependent radiance fields within a unified framework. However, their effectiveness in reconstructing objects with specular or complex surfaces is typically biased by the directional parameterization used in their view-dependent radiance network. <b>Viewing direction</b> and <b>reflection direction</b> are the two most commonly used directional parameterizations but have their own limitations. Typically, utilizing the viewing direction usually struggles to correctly decouple the geometry and appearance of objects with highly specular surfaces, while using the reflection direction tends to yield overly smooth reconstructions for concave or complex structures. In this paper, we analyze their failed cases in detail and propose a novel <b>hybrid directional parameterization</b> to address their limitations in a unified form. Extensive experiments demonstrate the proposed hybrid directional parameterization consistently delivered satisfactory results in reconstructing objects with a wide variety of materials, geometry and appearance, whereas using other directional parameterizations faces challenges in reconstructing certain objects. Moreover, the proposed hybrid directional parameterization is nearly parameter-free and can be effortlessly applied in any existing neural surface reconstruction method.
+          </p>
+          <p><b>TL;DR:</b> Common directional parameterization of view-dependent radiance, either viewing or reflection direction, carries inherent limitations in certain scenes, and we propose a new unified form of hybrid directional parameterization. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-body">
+      <img src="static/images/failure_scenes.jpg"/>
+      <div class="content has-text-centered">
+        <p>
+          Observations: scenarios where existing directional parameterizations succeed and struggle.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Analysis -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Analysis on the use of reflection direction</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            For the use of reflection direction, we observed a distinct aspect from the viewing direction: calculating the reflection direction requires information from the geometry being optimized (i.e., normal). We provide two specific examples to analyze the impact of incorporating normals on view-dependent radiance modeling.
+          </p>
+        </div>
+
+        <!-- Unrelated surface -->
+        <h3 class="title is-4">1) Influence by unrelated surface area</h3>
+        <div class="content has-text-justified">
+          <p>
+            Normals at sampled points may be influenced by unrelated surfaces other than the intersection surface.
+          </p>
+        </div>
+        <div class="column is-half is-offset-one-quarter is-centered has-text-centered">
+          <img src="static/images/unrelated_surface_area.png"
+               class="interpolation-image"
+               alt="Interpolate start reference image."/>
+        </div>
+
+        <!-- normal distribution -->
+        <h3 class="title is-4">2) Scattered distribution of normals and reflection directions</h3>
+
+        <div class="content has-text-justified">
+          <p>
+            Smooth surfaces yield similarity in normals and reflection directions for the sampled points, while surfaces with intricate local details, e.g., concavities, induce a scattered distribution of normals and reflection directions (Ref. dirs), particularly pronounced slightly distant from the vicinity of the zero-level set, which adversely affects geometry optimization.
+          </p>
+        </div>
+        
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-2 has-text-centered">
+            <img src="static/images/interpolate/refdirs/start.png"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Smooth surface (typically in the early stage of training)</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper-refdirs">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider-refdirs"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-2 has-text-centered">
+            <img src="static/images/interpolate/refdirs/end.png"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">Target complex surface</p>
+          </div>
+        </div>
+
+        <div class="content has-text-centered">
+          <p>
+            Use the <b><font color="#083090">slider</font></b> here for a better visualization of the changes in normal and reflection direction.
+          </p>
+        </div>
+
+        <h2 class="title is-3">Our solution</h2>
+        <div class="content has-text-justified">
+          <p>
+            We find that, 1) for sampled points near the intersecting surface, the normals here accurately reflect the normals of the intersecting surface, thereby enabling the reflection direction to better model the interaction between light and surface; while 2) for other sampled points along the ray, using the reflection direction could potentially lead to the issues demonstrated above, and using the viewing direction at these sampled points can avoid these issues.
+            Motivated by these thoughts, we propose a spatial-aware directional representation, which transitions from reflection direction \(\mathbf{d}_{\mathrm{ref}}\)  to viewing direction \(\mathbf{d}_{\mathrm{view}}\) based on the distance to the surface (i.e., the absolute value of SDF).
+          </p>
+          <p>
+            \[\mathbf{d}_\mathrm{hyb} = \mathrm{normalize}(\alpha \cdot \mathbf{d}_\mathrm{ref} + (1-\alpha) \cdot \mathbf{d}_\mathrm{view})\]
+          </p>
+          <p>where $\alpha \in [0, 1]$ represents the blend weight based on the SDF value:</p>
+          <p>
+            \[\alpha = \mathrm{exp}(-\gamma\cdot \mathrm{detach}(|f(\mathbf{\mathbf{x}})|))\]
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{jiang2024rethinking,
+    author    = {Jiang, Zijie and Xu, Tianhan and Kato, Hiroharu},
+    title     = {Rethinking Directional Parameterization in Neural Implicit Surface Reconstruction},
+    booktitle = {European Conference on Computer Vision (ECCV)},
+    year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <a href="https://www.titech.ac.jp/english">
+        <img src="static/images/Tokyo_Institute_of_Technology_logo,_4.svg" class="img-logo"/>
+      </a>
+      <a href="https://www.preferred.jp/en/">
+        <img src="static/images/PFN_logo.png" class="img-logo"/>
+      </a>
+      <a href="https://pfn3d.com/">
+        <img src="static/images/PFN3DScan_logo_blue.png" class="img-logo"/>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>. 
+          
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for open-sourcing this template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
